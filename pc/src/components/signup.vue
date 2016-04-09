@@ -6,12 +6,20 @@
     </div>
     <div id="login-form">
       <div class="control-group">
+        <input type="text" class="login-field" value="" placeholder="Nickname" id="login-nickname">
+        <label class="login-field-icon fui-lock-16" for="login-nickname"><icon name="user" scale="1.6"></icon></label>
+      </div>
+      <div class="control-group">
         <input type="email" class="login-field" value="" placeholder="Enter your mail" id="login-name">
         <label class="login-field-icon fui-man-16" for="login-name"><icon name="at" scale="1.6"></icon></label>
       </div>
-      <a class="btn btn-primary btn-block" href="#">Reset password</a>
+      <div class="control-group">
+        <input type="password" class="login-field" value="" placeholder="Password" id="login-pass">
+        <label class="login-field-icon fui-lock-16" for="login-pass"><icon name="lock" scale="1.6"></icon></label>
+      </div>
+      <a class="btn btn-primary btn-block" href="#">Sign up</a>
       <a class="login-link left" v-link="{ path: '/login' }">← Log in</a>
-      <a class="login-link right" v-link="{ path: '/signup' }">Sign up →</a>
+      <a class="login-link right"> </a>
     </div>
   </div>
 </template>
