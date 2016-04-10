@@ -10,7 +10,6 @@
     font-family: Helvetica, Arial, Verdana, sans-serif;
     font-size: 14px;
     line-height: 1.231;
-    background-color: #1abc9c;
     margin: 0;
   }
   input {

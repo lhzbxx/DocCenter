@@ -1,30 +1,48 @@
 <template>
   <div id="login">
     <div id="login-logo">
-      <img src="../assets/img/login/icon.png">
+      <img src="../../assets/img/login/icon.png">
       <h4>Welcome to <small>DocCenter App</small></h4>
     </div>
     <div id="login-form">
-      <div class="control-group">
-        <input type="email" class="login-field" value="" placeholder="Enter your mail" id="login-name">
-        <label class="login-field-icon fui-man-16" for="login-name"><icon name="at" scale="1.6"></icon></label>
-      </div>
-      <a class="btn btn-primary btn-block" href="#">Reset password</a>
-      <a class="login-link left" v-link="{ path: '/login' }">← Log in</a>
-      <a class="login-link right" v-link="{ path: '/signup' }">Sign up →</a>
+      <Log-In v-show="check(1)"></Log-In>
+      <Sign-Up v-show="check(2)"></Sign-Up>
+      <Forget-Password v-show="check(3)"></Forget-Password>
     </div>
   </div>
 </template>
 <script>
-  import Icon from 'vue-awesome'
+  import LogIn from './LogIn.vue'
+  import SignUp from './SignUp.vue'
+  import ForgetPassword from './ForgetPassword.vue'
   export default {
     components: {
-      Icon
+      LogIn,
+      SignUp,
+      ForgetPassword
+    },
+    data () {
+      return {
+        state: 1
+      }
+    },
+    methods: {
+      check: function (state) {
+        return this.state === state
+      }
+    },
+    events: {
+      'state': function (state) {
+        this.state = state
+      }
     }
   }
 </script>
-<style scoped>
-  img {
+<style>
+  body {
+    background-color: #1abc9c;
+  }
+  #login-logo img {
     width: 150px;
   }
   #login {
@@ -75,17 +93,19 @@
     text-align: right;
     width: 35%;
   }
-  h4 {
+  #login h4 {
     color: #fff;
     font-size: 20px;
     font-weight: 300;
     line-height: 34px;
     opacity: .95;
+    user-select: none;
   }
-  small {
+  #login small {
     font-size: inherit;
     font-weight: 700;
     color: inherit;
+    user-select: none;
   }
   .login-field {
     font-size: 17px;
@@ -93,5 +113,14 @@
     padding-top: 11px;
     text-indent: 3px;
     width: 302px;
+  }
+  .v-transition {
+    overflow: hidden;
+    transition: all .3s;
+  }
+  .v-enter, .v-leave {
+    height: 0;
+    opacity: 0;
+    transition: all .3s;
   }
 </style>
