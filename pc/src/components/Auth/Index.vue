@@ -40,7 +40,7 @@
 </script>
 <style>
   body {
-    background-color: #1abc9c;
+    /*background-color: #1abc9c;*/
   }
   #login-logo img {
     width: 150px;

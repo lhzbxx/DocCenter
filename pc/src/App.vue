@@ -75,7 +75,7 @@
   }
   label {
     display: inline-block;
-    width: 20px;
+    width: 23px;
     position: absolute;
     top: 9px;
     right: 15px;

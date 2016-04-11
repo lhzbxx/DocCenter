@@ -5,8 +5,8 @@
       <label class="login-field-icon fui-man-16" for="login-name"><icon name="at" scale="1.6"></icon></label>
     </div>
     <a class="btn btn-primary btn-block">Reset password</a>
-    <a class="login-link left" v-on:click="notify(1)">← Log in</a>
-    <a class="login-link right" v-on:click="notify(2)">Sign up →</a>
+    <a class="login-link left"> </a>
+    <a class="login-link right" v-on:click="notify(1)">Log in →</a>
   </div>
 </template>
 <script>
